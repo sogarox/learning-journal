@@ -8,7 +8,6 @@ body{
     font-family: "Cantarell", sans-serif;
 }
 nav{
-    margin-top: .5em;
     padding: 0 .5em;
     display: flex;
     align-items: center;
@@ -28,6 +27,10 @@ nav button{
 nav button:hover{
     color: rgb(119, 119, 119);
 }
+nav button:target{
+    border-right: cyan 1px solid;
+    border-left: cyan 1px solid;
+}
 
 .nav-section{
     align-items: inherit;
@@ -39,7 +42,7 @@ nav button:hover{
     font-weight: 900;
 }
 
-.main-container {
+.grid-container {
     margin-top: 2em;
     display: grid;
     grid-gap: .5em;
@@ -116,10 +119,42 @@ footer{
     margin: 0;
 }
 
-@media (min-width: 301px) {
-    nav,
-    .hero{
-        
-    grid-column: span 3;
+/*Secondary about page*/
+
+.recent-posts{
+    text-align: center;
+    margin: 0 1em;
+    
+}
+
+.about-main{
+    grid-template-columns: 1fr;
+    display: grid;
+    margin: 0 1em;
+}
+.gibberish{
+    border-bottom: 1px rgb(141, 141, 141) dotted ;
+}
+
+.profile-info{
+    margin: 0 1em;
+    display: grid;
+    grid-template: 10% .6fr / 150px 1fr;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    border-bottom: 1px rgb(141, 141, 141) dotted ;
+}
+
+.profile-pic{
+    margin-right: 1rem;
+    border-radius: 50%;
+    min-width: 180px;
+    height: 180px;
+    grid-row: span 2;
+    grid-auto-flow: dense;
+}
+
+@media (min-width: 500px) {
+    .profile-info{
+        display: flex;
     }
 }
